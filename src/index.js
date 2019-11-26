@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
         if (filter.isProfane(message)) {
             return callback('Profinity is not allowed')
         }
-
+        console.log(message)
         io.to(user.room).emit('message', genrateMessage(user.username,message))
         callback()
     })

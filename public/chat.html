@@ -12,7 +12,72 @@
     <div class="chat">
         <div id="sidebar" class="chat__sidebar">
 
+
         </div>
+        <div id="btns_container" class="crypto_btns">
+            <button id="crypto_btn">Crypto</button>
+            <button id="keys_btn">Keys</button>
+        </div>
+        <div id="crypto_overlay" class="overlay">
+            <div id="crypto_overlay_close" class="overlay_close"></div>
+            <div class="crypto_list">
+                    <h1>Encryption Methods</h1>
+                    <label class="container">Ceasar
+                        <input type="checkbox"  class="crypto_type" name="ceasar" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Polybius
+                        <input type="checkbox"  class="crypto_type" name="polybius" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Vigenere
+                        <input type="checkbox" class="crypto_type" name="vigenere" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Odd-Even
+                        <input type="checkbox" class="crypto_type" name="oddeven" disabled>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Columns
+                        <input type="checkbox" class="crypto_type" name="columns" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Non-Singular Matrix
+                        <input type="checkbox" class="crypto_type" name="nonsingularmatrix" >
+                        <span class="checkmark"></span>
+                    </label>
+
+            </div>
+        </div>
+        <div id="keys_overlay" class="overlay">
+                <div id="keys_overlay_close" class="overlay_close"></div>
+                <div class="crypto_list">
+                        <h1>Keys</h1>
+                        <label class="">Ceasar
+                            <input type="text" id="ceasarkey">
+                        </label>
+                        <label class="">Vigenere
+                            <input type="text" id="vigenerekey">
+                        </label>
+                        <label class="">Columns
+                            <input type="text" id="columnskey">
+                        </label>
+                        <label class="" style="text-align: center;">Matrix
+                            <table id="matrixkey">
+                                <tr>
+                                    <th><input type="text"></th><th><input type="text"></th><th><input type="text"></th>
+                                </tr>
+                                <tr>
+                                        <th><input type="text"></th><th><input type="text"></th><th><input type="text"></th>
+                                </tr>
+                                <tr>
+                                        <th><input type="text"></th><th><input type="text"></th><th><input type="text"></th>
+                                </tr>
+                            </table>
+                        </label>
+                        <button id="save">Save</button>
+                </div>
+            </div>
         <div class="chat__main">
             <div id="messages" class="chat__messages"></div>
             <div class="compose">
@@ -20,12 +85,12 @@
                     <input name="message" placeholder="Message" required autocomplete="off">
                     <button>Send</button>
                 </form>
-                <button id="send-location">Send location</button>       
+                <button id="send-location">Send location</button>
             </div>
-                 
+
         </div>
     </div>
-    
+
     <script id="message-template" type="text/html">
         <div class="message">
             <p>

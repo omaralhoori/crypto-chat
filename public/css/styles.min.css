@@ -1,1 +1,146 @@
-*{margin:0;padding:0;box-sizing:border-box}html{font-size:16px}input{font-size:14px}body{line-height:1.4;color:#333;font-family:Helvetica,Arial,sans-serif}h1{margin-bottom:16px}label{display:block;font-size:14px;margin-bottom:8px;color:#777}input{border:1px solid #eee;padding:12px;outline:none}button{cursor:pointer;padding:12px;background:#7C5CBF;border:none;color:#fff;font-size:16px;transition:background .3s ease}button:hover{background:#6b47b8}button:disabled{cursor:default;background:#7c5cbf94}.centered-form{background:#333744;width:100vw;height:100vh;display:flex;justify-content:center;align-items:center}.centered-form__box{box-shadow:0 0 17px 1px #1D1F26;background:#F7F7FA;padding:24px;width:250px}.centered-form button{width:100%}.centered-form input{margin-bottom:16px;width:100%}.chat{display:flex}.chat__sidebar{height:100vh;color:#fff;background:#333744;width:225px;overflow-y:scroll}.chat__main{flex-grow:1;display:flex;flex-direction:column;max-height:100vh}.chat__messages{flex-grow:1;padding:24px 24px 0;overflow-y:scroll}.message{margin-bottom:16px}.message__name{font-weight:600;font-size:14px;margin-right:8px}.message__meta{color:#777;font-size:14px}.message a{color:#0070CC}.compose{display:flex;flex-shrink:0;margin-top:16px;padding:24px}.compose form{display:flex;flex-grow:1;margin-right:16px}.compose input{border:1px solid #eee;width:100%;padding:12px;margin:0 16px 0 0;flex-grow:1}.compose button{font-size:14px}.room-title{font-weight:400;font-size:22px;background:#2c2f3a;padding:24px}.list-title{font-weight:500;font-size:18px;margin-bottom:4px;padding:12px 24px 0}.users{list-style-type:none;font-weight:300;padding:12px 24px 0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px}
+input{font-size:14px}
+body{line-height:1.4;color:#333;font-family:Helvetica,Arial,sans-serif}
+h1{margin-bottom:16px}label{display:block;font-size:14px;margin-bottom:8px;color:#777}
+input{border:1px solid #eee;padding:12px;outline:none}
+button{
+    cursor:pointer;
+    padding:12px;
+    background:#7C5CBF;
+    border:none;color:#fff;
+    font-size:16px;
+    transition:background .3s ease}
+button:hover{background:#6b47b8}
+button:disabled{cursor:default;background:#7c5cbf94}
+.centered-form{background:#333744;width:100vw;height:100vh;display:flex;justify-content:center;align-items:center}
+.centered-form__box{box-shadow:0 0 17px 1px #1D1F26;background:#F7F7FA;padding:24px;width:250px}
+.centered-form button{width:100%}
+.centered-form input{margin-bottom:16px;width:100%}
+.chat{display:flex}
+.chat__sidebar{height:100vh;color:#fff;background:#333744;width:225px;overflow-y:scroll}
+.chat__main{flex-grow:1;display:flex;flex-direction:column;max-height:100vh}
+.chat__messages{flex-grow:1;padding:24px 24px 0;overflow-y:scroll}
+.message{margin-bottom:16px}
+.message__name{font-weight:600;font-size:14px;margin-right:8px}
+.message__meta{color:#777;font-size:14px}.message a{color:#0070CC}
+.compose{display:flex;flex-shrink:0;margin-top:16px;padding:24px}
+.compose form{display:flex;flex-grow:1;margin-right:16px}
+.compose input{border:1px solid #eee;width:100%;padding:12px;margin:0 16px 0 0;flex-grow:1}
+.compose button{font-size:14px}.room-title{font-weight:400;font-size:22px;background:#2c2f3a;padding:24px}
+.list-title{font-weight:500;font-size:18px;margin-bottom:4px;padding:12px 24px 0}
+.users{list-style-type:none;font-weight:300;padding:12px 24px 0}
+
+.crypto_btns{
+    position: absolute;
+    bottom: 0;
+    left: 0;   
+    width:225px;
+}
+.crypto_btns button{
+    width: 100%;
+}
+.overlay{
+  position: fixed; 
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); 
+  z-index: 2;
+  cursor: pointer;
+}
+.overlay_close{
+    width: 100%;
+    height: 100%;
+}
+.crypto_list{
+    position: fixed;
+    display: flex;
+  flex-direction: column;
+    width: 80%;
+    height: 80%;
+    background: beige;
+    box-shadow: #333;
+    left: 10%;
+    top:10%;
+    justify-content: space-around;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: rgb(112, 31, 218);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .crypto_list table input[type=text] {
+    width: 60px;
+  }
+  .crypto_list table{
+    margin: auto;
+  }
