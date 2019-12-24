@@ -18,8 +18,8 @@ const addUser = ({ id, username, room }) => {
             error: 'Username is in use!'
         }
     }
-
-    const user = { id, username, room }
+    let userTime = 60000
+    const user = { id, username, room ,userTime}
     users.push(user)
     return { user }
 }
@@ -40,10 +40,18 @@ const getUser = (id) => {
 const getUserInRoom = (room) => {
     return users.filter((user) => user.room === room)
 }
+const updateUserTime = (user) => {
+    user.userTime = 60000
+}
+const getUsers = () => {
+    return users
+}
 
 module.exports = { 
     addUser,
     removeUser,
     getUser,
-    getUserInRoom
+    getUserInRoom,
+    updateUserTime,
+    getUsers
 }

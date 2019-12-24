@@ -144,3 +144,7 @@ button:disabled{cursor:default;background:#7c5cbf94}
   .crypto_list table{
     margin: auto;
   }
+
+  .crypto_list label > input{
+    margin-left: 10px;
+  }

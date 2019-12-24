@@ -30,20 +30,32 @@
                         <input type="checkbox"  class="crypto_type" name="polybius" >
                         <span class="checkmark"></span>
                     </label>
+                    <label class="container">Cit
+                        <input type="checkbox" class="crypto_type" name="cit" >
+                        <span class="checkmark"></span>
+                    </label>
                     <label class="container">Vigenere
                         <input type="checkbox" class="crypto_type" name="vigenere" >
                         <span class="checkmark"></span>
                     </label>
-                    <label class="container">Odd-Even
-                        <input type="checkbox" class="crypto_type" name="oddeven" disabled>
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="container">Columns
+                    <label class="container">Columnar
                         <input type="checkbox" class="crypto_type" name="columns" >
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">Non-Singular Matrix
                         <input type="checkbox" class="crypto_type" name="nonsingularmatrix" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">DES
+                        <input type="checkbox" class="crypto_type" name="DES" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">AES
+                        <input type="checkbox" class="crypto_type" name="AES" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">RSA
+                        <input type="checkbox" class="crypto_type" name="RSA" >
                         <span class="checkmark"></span>
                     </label>
 
@@ -53,28 +65,44 @@
                 <div id="keys_overlay_close" class="overlay_close"></div>
                 <div class="crypto_list">
                         <h1>Keys</h1>
-                        <label class="">Ceasar
-                            <input type="text" id="ceasarkey">
-                        </label>
-                        <label class="">Vigenere
-                            <input type="text" id="vigenerekey">
-                        </label>
-                        <label class="">Columns
-                            <input type="text" id="columnskey">
-                        </label>
-                        <label class="" style="text-align: center;">Matrix
-                            <table id="matrixkey">
-                                <tr>
-                                    <th><input type="text"></th><th><input type="text"></th><th><input type="text"></th>
-                                </tr>
-                                <tr>
+                        <div>
+                            <div style="width: 400px; margin: auto;">
+                                <label class=""><span style="margin-left: 11px;">Ceasar</span>
+                                <input type="text" id="ceasarkey">
+                                </label>
+                                <label class="">Vigenere
+                                    <input type="text" id="vigenerekey">
+                                </label>
+                                <label class=""><span style="margin-left: 28px;">DES</span>
+                                    <input type="text" id="DESkey">
+                                </label>
+                                <label class=""><span style="margin-left: 28px;">AES</span>
+                                    <input type="text" id="AESkey">
+                                </label>
+                            </div>
+                        </div>
+                        <div style="display: flex;flex-flow: row;justify-content: center;">
+                            <label class="" style="text-align: center;float: left;margin: 0 70px;">Matrix
+                                <table id="matrixkey" style="height: 160px; margin: 15px 0 0 0;">
+                                    <tr>
                                         <th><input type="text"></th><th><input type="text"></th><th><input type="text"></th>
-                                </tr>
-                                <tr>
-                                        <th><input type="text"></th><th><input type="text"></th><th><input type="text"></th>
-                                </tr>
-                            </table>
-                        </label>
+                                    </tr>
+                                    <tr>
+                                            <th><input type="text"></th><th><input type="text"></th><th><input type="text"></th>
+                                    </tr>
+                                    <tr>
+                                            <th><input type="text"></th><th><input type="text"></th><th><input type="text"></th>
+                                    </tr>
+                                </table>
+                            </label>
+                            <label class="" style="text-align: center;float: left;margin: 0 50px;">RSA<br>
+                                <span>Public Key</span> <button style="padding: 5px;border-radius: 8px;margin: 6px;" id="generateRSABtn">GENERATE</button><br>
+                                    <span><input type="text" placeholder="E..." id="RSAKeyE"></span><br>
+                                    <span><input type="text" placeholder="N..." id="RSAKeyN"></span><br>
+                                <span>Private Key</span><br>
+                                    <span><input type="text" placeholder="D..." id="RSAKeyD"></span>
+                            </label>
+                        </div>
                         <button id="save">Save</button>
                 </div>
             </div>
